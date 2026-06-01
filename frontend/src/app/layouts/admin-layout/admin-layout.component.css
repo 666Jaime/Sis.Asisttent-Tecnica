@@ -1,0 +1,221 @@
+.admin-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--bg-primary);
+  overflow: hidden;
+}
+
+/* Sidebar Estilos */
+.admin-sidebar {
+  width: 260px;
+  background-color: var(--bg-secondary);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  transition: width var(--transition-medium);
+  z-index: 10;
+}
+
+.admin-sidebar.collapsed {
+  width: 70px;
+}
+
+.sidebar-brand {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 12px;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.brand-icon {
+  font-size: 28px;
+  color: var(--color-gold);
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.brand-text {
+  font-family: var(--font-family-title);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  transition: opacity var(--transition-fast);
+}
+
+.admin-sidebar.collapsed .brand-text {
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  overflow: hidden;
+}
+
+/* Enlaces del Sidebar */
+.sidebar-nav {
+  flex: 1;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  gap: 15px;
+  border-radius: 10px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.nav-item.active {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: var(--color-accent);
+  border-left: 3px solid var(--color-accent);
+}
+
+.nav-label {
+  font-family: var(--font-family-body);
+  font-size: 14px;
+  transition: opacity var(--transition-fast);
+  white-space: nowrap;
+}
+
+.admin-sidebar.collapsed .nav-label {
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  overflow: hidden;
+}
+
+.sidebar-footer {
+  padding: 15px 10px;
+  border-top: 1px solid var(--border-color);
+}
+
+.chat-link {
+  color: var(--color-gold);
+}
+
+.chat-link:hover {
+  background-color: rgba(212, 175, 55, 0.1);
+  color: var(--text-primary);
+}
+
+/* Contenido de la Aplicación */
+.admin-content-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Header Superior */
+.admin-header {
+  height: 70px;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  justify-content: space-between;
+}
+
+.menu-toggle-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color var(--transition-fast);
+}
+
+.menu-toggle-btn:hover {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.header-title h2 {
+  font-size: 18px;
+  font-weight: 550;
+  color: var(--text-primary);
+}
+
+.header-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(16, 185, 129, 0.08);
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-indicator.online {
+  background-color: var(--color-success);
+  box-shadow: 0 0 8px var(--color-success);
+}
+
+.status-text {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-success);
+}
+
+/* Área Principal de Contenido */
+.admin-main {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+  background-color: var(--bg-primary);
+}
+
+@media (max-width: 768px) {
+  .admin-sidebar {
+    position: absolute;
+    height: 100vh;
+    left: -260px;
+  }
+  .admin-sidebar.collapsed {
+    left: 0;
+    width: 260px;
+  }
+  .admin-sidebar.collapsed .brand-text,
+  .admin-sidebar.collapsed .nav-label {
+    opacity: 1;
+    width: auto;
+    overflow: visible;
+  }
+}
+
+.logout-link {
+  color: var(--color-error);
+  margin-top: 5px;
+}
+
+.logout-link:hover {
+  background-color: rgba(244, 63, 94, 0.1);
+  color: var(--text-primary);
+}
+

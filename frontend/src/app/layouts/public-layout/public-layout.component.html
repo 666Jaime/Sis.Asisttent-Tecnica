@@ -1,0 +1,24 @@
+<div class="public-container">
+  <!-- Cabecera Institucional Sutil -->
+  <header class="public-header">
+    <div class="header-left">
+      <span class="material-symbols-rounded logo-icon">gavel</span>
+      <div class="logo-text">
+        <h1>ASISTENTE FISCAL-IA</h1>
+        <small>Fiscalía Departamental de Tarija</small>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <a routerLink="/login" class="admin-login-btn" id="btnLoginDirect">
+        <span class="material-symbols-rounded">admin_panel_settings</span>
+        <span>Acceso Portal</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Router Outlet de la Vista Pública -->
+  <main class="public-main">
+    <router-outlet></router-outlet>
+  </main>
+</div>

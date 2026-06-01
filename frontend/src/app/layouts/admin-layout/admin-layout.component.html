@@ -1,0 +1,59 @@
+<div class="admin-container">
+  <!-- Sidebar Lateral -->
+  <aside class="admin-sidebar" [class.collapsed]="isSidebarCollapsed" id="adminSidebar">
+    <div class="sidebar-brand">
+      <span class="material-symbols-rounded brand-icon">gavel</span>
+      <span class="brand-text" style="font-size: 14px;">ASISTENTE FISCAL-IA</span>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a routerLink="/admin/dashboard" routerLinkActive="active" class="nav-item" id="navDashboard">
+        <span class="material-symbols-rounded">dashboard</span>
+        <span class="nav-label">Dashboard</span>
+      </a>
+      <a routerLink="/admin/documents" routerLinkActive="active" class="nav-item" id="navDocuments">
+        <span class="material-symbols-rounded">description</span>
+        <span class="nav-label">Documentos</span>
+      </a>
+      <a routerLink="/admin/tutorials" routerLinkActive="active" class="nav-item" id="navTutorials">
+        <span class="material-symbols-rounded">video_library</span>
+        <span class="nav-label">Tutoriales</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a routerLink="/chat" class="nav-item chat-link" id="navChatBack">
+        <span class="material-symbols-rounded">chat</span>
+        <span class="nav-label">Chat Público</span>
+      </a>
+      <a (click)="logout()" class="nav-item logout-link" id="navLogout">
+        <span class="material-symbols-rounded">logout</span>
+        <span class="nav-label">Cerrar Sesión</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Contenedor Principal (Header + Main) -->
+  <div class="admin-content-area">
+    <!-- Header Superior -->
+    <header class="admin-header">
+      <button class="menu-toggle-btn" (click)="toggleSidebar()" id="btnToggleSidebar">
+        <span class="material-symbols-rounded">menu</span>
+      </button>
+
+      <div class="header-title">
+        <h2>Panel de Control e Inteligencia</h2>
+      </div>
+
+      <div class="header-status">
+        <span class="status-indicator online"></span>
+        <span class="status-text">Fiscalía Conectada</span>
+      </div>
+    </header>
+
+    <!-- Main Content Outlet -->
+    <main class="admin-main">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>
