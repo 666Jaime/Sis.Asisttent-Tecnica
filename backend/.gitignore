@@ -1,0 +1,19 @@
+# Variables de entorno sensibles — NUNCA publicar
+.env
+.env.local
+.env.*.local
+
+# Entorno virtual Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Bases de datos locales
+chroma_db/
+uploads/
+documents/
+
+# Editor
+.vscode/settings.json
+*.log

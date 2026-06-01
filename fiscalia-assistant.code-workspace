@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": "backend",
+			"name": "Backend (FastAPI)"
+		},
+		{
+			"path": "frontend",
+			"name": "Frontend (Angular)"
+		}
+	],
+	"settings": {
+		"python.defaultInterpreterPath": "venv/Scripts/python.exe",
+		"python.analysis.extraPaths": [
+			"."
+		],
+		"python.autoComplete.extraPaths": [
+			"."
+		]
+	}
+}
